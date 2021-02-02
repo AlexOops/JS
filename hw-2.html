@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hw</title>
+    <script>
+            //task_1
+        // var a = 1, b = 1, c, d;
+        // c = ++a; alert(c);           // 2 - А хранит 1. Префиксная  (+ 1) форма возвращает новое значение 2;
+        // d = b++; alert(d);           // 1 - B  хранит 1. Постфиксная форма возвращает старое значение 1;
+        // c = (2+ ++a); alert(c);      // 5 - (2 + (префикс +1) + 2) итого = 5;
+        // d = (2+ b++); alert(d);      // 4 - (2 + 2 (посфикс)) итого = 4;
+        // alert(a);                    // 3 - в 1-м примере 1 + в 3-м примере + 1 итого = 3;
+        // alert(b);                    // 3 - в 2-м примере 1 + в 4-м примере + 1 итого = 3;
+
+            //tesk_2  (ответ = 5)
+        //  var a = 2;
+        //  var x = 1 + (a *= 2); // - 5 = 1 + (2 * 2)
+        //  alert(x); 
+
+            //task_3
+        // var a = +prompt("Введите 1 произвольное число: ");
+        // var b = +prompt("Введите 2 произвольное число: ");
+
+        // if (a > 0 && b > 0) {
+        //     alert(a - b);
+        // } else if (a < 0 && b < 0) {
+        //     alert(a * b);
+        // } else if ((a >= 0 && b < 0) || ( a < 0 && b >= 0)) {
+        //     alert(a + b);
+        // }
+
+            //task_4
+        // var a = parseInt(Math.random() * 15);
+
+        // function numbers() {
+        //     console.log(a);
+        //     a++
+        //     if (a <= 15) {
+        //         numbers();
+        //     }
+        // }
+        // alert(a);
+        // numbers();
+
+
+            //task_5
+        // function sum(a, b) {
+        //     return (a + b);
+        // }
+
+        // function ded(a, b) {
+        //     return (a - b);
+        // }
+
+        // function inc(a, b) {
+        //     return (a * b);
+        // }
+
+        // function div(a, b) {
+        //     return (a / b);
+        // }
+
+        // alert(sum(1, 2));
+        // alert(ded(1, 2));
+        // alert(inc(1, 2));
+        // alert(div(1, 2));
+
+            //task_6 (нужно раскомментить 5-е задание)
+        // function mathOperation(argFirst, argSecond, operation) {
+        //     switch (operation) {
+        //         case ("+"):
+        //         console.log (sum(argFirst, argSecond));
+        //         case ("-"):
+        //         console.log (ded(argFirst, argSecond));
+        //         case ("*"):
+        //         console.log (inc(argFirst, argSecond));
+        //         case ("/"):
+        //         console.log (div(argFirst, argSecond));
+        //     }
+        // }
+
+        // mathOperation(10, 5, "/");
+
+            //task_7
+        /* 
+        alert(null > 0); //  false
+        alert(null == 0); //  false
+        alert(null >= 0); //  true
+
+        Сравнения преобразуют null в число, рассматривая его как 0. Поэтому выражение null >= 0 истинно, а null >
+        0 ложно.  Для нестрогого равенства == значений undefined и null действует особое правило: эти значения 
+        ни к чему не приводятся, они равны друг другу и не равны ничему другому. Поэтому null == 0 ложно.
+        */
+
+            //task_8
+        // function power(a, b){
+        //     return(Math.pow(a,b));
+        // }
+
+        // alert(power(2,3));
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
