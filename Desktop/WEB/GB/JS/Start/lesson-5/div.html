@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW</title>
+    <style>
+        .board {
+            width: 560px;
+            height: 560px;
+            margin: 0 auto;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .block {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .black {
+            background-color: rgb(80, 80, 80);
+        }
+
+        .white {
+            background-color: rgb(238, 248, 248);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="board"></div>
+    <script>
+        
+        function drawChess() {
+            var board = document.querySelector('.board');
+            var block;
+            var fill = true;
+            var letters = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ''],
+                blackFirst = ['&#9820;', '&#9822;', '&#9821;', '&#9819;', '&#9818;', '&#9821;', '&#9822;', '&#9820;'],
+                blackSecond = ['&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;'],
+                whiteFirst = ['&#9814;', '&#9816;', '&#9815;', '&#9813;', '&#9812;', '&#9815;', '&#9816;', '&#9814;'],
+                whiteSecond = ['&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;'];
+
+            for (var i = 0; i < 8; i++) {
+                for (var j = 0; j < 8; j++) {
+                    block = document.createElement('div');
+                    board.appendChild(block);
+
+                    if (j == 0) {
+                        fill = !fill;
+                    }
+
+                    if (fill) {
+                        block.className = 'block black';
+                    } else {
+                        block.className = 'block white';
+                    }
+
+                    fill = !fill;
+                    
+                    switch (i) {
+                        case 0:
+                            block.innerHTML = blackFirst[j];
+                            break;
+                        case 1:
+                            block.innerHTML = blackSecond[j];
+                            break;
+                        case 6:
+                            block.innerHTML = whiteSecond[j];
+                            break;
+                        case 7:
+                            block.innerHTML = whiteFirst[j];
+                            break;
+                    }
+                }
+            }
+        }
+        
+        drawChess();
+
+    </script>
+</body>
+
+</html>
