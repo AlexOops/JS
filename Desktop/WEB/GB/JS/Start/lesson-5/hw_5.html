@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HW</title>
+    <style>
+        * {
+            margin: 0 auto;
+        }
+
+        .cell {
+            width: 70px;
+            height: 70px;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        tr:nth-child(even) td:nth-child(odd) {
+            background-color: rgb(177, 196, 192);
+        }
+
+        tr:nth-child(odd) td:nth-child(even) {
+            background-color: rgb(177, 196, 192);
+        }
+
+        tr:last-child td:nth-child(odd),
+        tr:first-child td:nth-child(even) {
+            background-color: rgb(255, 255, 255);
+        }
+
+        tr:nth-child(even) td:first-child {
+            background-color: rgb(255, 255, 255);
+        }
+
+        tr:nth-child(odd) td:last-child {
+            background-color: rgb(255, 255, 255);
+        }
+
+        tr:first-child td:nth-child(-n + 10) {
+            transform: rotate(180deg);
+        }
+
+        td:last-child {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+
+<body>
+    <table class="table"></table>
+    <script>
+        function drawChess() {
+            var board = document.querySelector('.table');
+            var letters = ['', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', ''],
+                blackFirst = ['1', '&#9814;', '&#9816;', '&#9815;', '&#9813;', '&#9812;', '&#9815;', '&#9816;', '&#9814;', '1'],
+                blackSecond = ['2', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '&#9817;', '2'],
+                whiteFirst = ['7', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '&#9823;', '7'],
+                whiteSecond = ['8', '&#9820;', '&#9822;', '&#9821;', '&#9819;', '&#9818;', '&#9821;', '&#9822;', '&#9820;', '8'];
+
+            for (var row = 0, numbers = 9; row < 10, numbers >= 0; row++, numbers--) {
+                var tableRow = board.insertRow(row);
+
+                for (var cell = 0; cell < 10; cell++) {
+                    var tableCell = tableRow.insertCell(cell);
+
+                    switch (row) {
+                        case 0:
+                        case 9:
+                            tableCell.innerText = letters[cell];
+                            break;
+                        case 1:
+                            tableCell.innerHTML = blackFirst[cell];
+                            break;
+                        case 2:
+                            tableCell.innerHTML = blackSecond[cell];
+                            break;
+                        case 7:
+                            tableCell.innerHTML = whiteFirst[cell];
+                            break;
+                        case 8:
+                            tableCell.innerHTML = whiteSecond[cell];
+                            break;
+                        default:
+                            if (cell == 0 || cell == 9) {
+                                tableCell.innerHTML = numbers;
+                            }
+                            break;
+                    }
+
+                    tableCell.className = 'cell';
+                    tableRow.className = 'row';
+                }
+            }
+        }
+        drawChess();
+
+    </script>
+</body>
+
+</html>
